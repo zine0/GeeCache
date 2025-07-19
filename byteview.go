@@ -4,6 +4,10 @@ type ByteView struct {
 	b []byte
 }
 
+func (v ByteView) ByteSlice() []byte {
+	return cloneBytes(v.b)
+}
+
 func (v ByteView) Len() uint {
 	return uint(len(v.b))
 }
